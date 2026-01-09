@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pluto Blocks – Project Book</title>
+
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --bg-side: #161b22;
+      --bg-card: #1c2128;
+      --border: #30363d;
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #ffb627;
+      --code-bg: #0b1220;
+      --sidebar-width: 280px;
+    }
+
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      overflow: hidden;
+      line-height: 1.65;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1 {
+      font-size: 32px;
+      margin: 0 0 24px 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 32px 0 16px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 24px 0 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      line-height: 1.7;
+      color: #c9d1d9;
+    }
+
+    ul,
+    ol {
+      margin: 12px 0 18px 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+      overflow-x: auto;
+      line-height: 1.55;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 36px;
+    }
+
+    .card>*:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--bg-side);
+      border-right: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-brand h1 {
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 4px;
+      border: none;
+      padding: 0;
+    }
+
+    .sidebar-brand p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .sidebar-scroll {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .nav-group {
+      margin-top: 28px;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .nav-item {
+      display: block;
+      padding: 10px 14px;
+      margin-bottom: 4px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .nav-item:hover {
+      background: #21262d;
+      color: #fff;
+    }
+
+    .nav-item.active {
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+    }
+
+    .nav-item.sub {
+      font-size: 13px;
+    }
+
+    .sub-menu {
+      padding-left: 15px;
+      display: none;
+    }
+
+    .sub-menu.open {
+      display: block;
+    }
+
+    .sidebar-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .board-selector label {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .board-selector select {
+      width: 100%;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    /* ===== FOOTER NAV ===== */
+    .nav-buttons {
+      position: fixed;
+      left: calc(var(--sidebar-width) + 40px);
+      right: 40px;
+      bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      background: rgba(22, 27, 34, 0.95);
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: 12px;
+    }
+
+    .nav-btn {
+      background: #21262d;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .nav-btn.hidden {
+      visibility: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>Pluto Project Book</h1>
+        <p>Using PlutoBlocks</p>
+      </div>
+
+      <nav class="sidebar-scroll">
+        <div class="nav-group">Basics</div>
+
+        <a href="#intro" class="nav-item">Introduction</a>
+        <a href="#compatibility" class="nav-item">Compatibility</a>
+        <a href="#platform" class="nav-item">Platform</a>
+        <div class="sub-menu" id="platform-sub">
+          <a href="#primus" class="nav-item sub">Primus Hardware</a>
+          <a href="#magis" class="nav-item sub">Magis Software</a>
+        </div>
+        <a href="#tinkering" class="nav-item">Tinkering</a>
+        <a href="#setup" class="nav-item">Prerequisites</a>
+
+        <div class="nav-group">Projects</div>
+        <div id="projects-nav"></div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="board-selector">
+          <label>Active Board</label>
+          <select id="board-select">
+            <option value="primus-x2">Pluto X (Primus X2)</option>
+            <option value="primus-v4">Pluto 1.2 (Primus V4)</option>
+          </select>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+      <div class="content" id="main-content"></div>
+    </main>
+  </div>
+
+  <div class="nav-buttons">
+    <a id="btn-prev" class="nav-btn">← Back</a>
+    <a id="btn-next" class="nav-btn">Next →</a>
+  </div>
+
+  <script>
+    let boardData = {};
+    let activeOrder = [];
+
+    const boardSelect = document.getElementById('board-select');
+    const contentArea = document.getElementById('main-content');
+    const prevBtn = document.getElementById('btn-prev');
+    const nextBtn = document.getElementById('btn-next');
+    const platformSub = document.getElementById('platform-sub');
+
+    async function loadContent() {
+      const board = boardSelect.value;
+      const res = await fetch(`assets/${board}.json`);
+      boardData = await res.json();
+
+      activeOrder = boardData._meta?.order || Object.keys(boardData).filter(k => k !== "_meta");
+
+      renderProjectsNav();
+
+      const hash = location.hash.replace('#', '');
+      const current = activeOrder.includes(hash) ? hash : activeOrder[0];
+
+      renderSection(current);
+    }
+
+    function renderProjectsNav() {
+      const nav = document.getElementById('projects-nav');
+      nav.innerHTML = '';
+
+      const groups = boardData._meta?.groups;
+
+      // 🔁 Fallback: behave like old version if no groups exist
+      if (!groups) {
+        activeOrder
+          .filter(id => /^p\d+/.test(id))
+          .forEach(id => {
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.className = 'nav-item';
+            a.textContent = boardData[id].title;
+            nav.appendChild(a);
+          });
+        return;
+      }
+
+      // ✅ Grouped rendering
+      groups.forEach(group => {
+        const heading = document.createElement('div');
+        heading.className = 'nav-group';
+        heading.textContent = group.title;
+        nav.appendChild(heading);
+
+        group.items.forEach(id => {
+          if (!boardData[id]) return;
+
+          const a = document.createElement('a');
+          a.href = `#${id}`;
+          a.className = 'nav-item';
+          a.textContent = boardData[id].title;
+          nav.appendChild(a);
+        });
+      });
+    }
+
+
+
+    function renderSection(id) {
+      const data = boardData[id];
+      contentArea.innerHTML = `<h1>${data.title}</h1>${data.html}`;
+
+      document.querySelectorAll('.nav-item').forEach(n =>
+        n.classList.toggle('active', n.getAttribute('href') === `#${id}`)
+      );
+
+      platformSub.classList.toggle('open', ['platform', 'primus', 'magis'].includes(id));
+      updatePagination(id);
+    }
+
+    function updatePagination(id) {
+      const i = activeOrder.indexOf(id);
+
+      prevBtn.classList.toggle('hidden', i <= 0);
+      nextBtn.classList.toggle('hidden', i >= activeOrder.length - 1);
+
+      if (i > 0) prevBtn.href = `#${activeOrder[i - 1]}`;
+      if (i < activeOrder.length - 1) nextBtn.href = `#${activeOrder[i + 1]}`;
+    }
+
+    boardSelect.onchange = () => {
+      localStorage.setItem('board', boardSelect.value);
+      loadContent();
+    };
+
+    window.onhashchange = () => renderSection(location.hash.replace('#', ''));
+    window.onload = () => {
+      boardSelect.value = localStorage.getItem('board') || boardSelect.value;
+      loadContent();
+    };
+  </script>
+
+</body>
+
+</html>

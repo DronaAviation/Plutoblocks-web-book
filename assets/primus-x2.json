@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "groups": [
+      {
+        "id": "basic",
+        "title": "Basic Projects",
+        "items": [
+          "p0",
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8"
+        ]
+      },
+      {
+        "id": "intermediate",
+        "title": "Intermediate Projects",
+        "items": [
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23"
+        ]
+      }
+    ],
+    "order": [
+      "intro",
+      "compatibility",
+      "platform",
+      "primus",
+      "magis",
+      "tinkering",
+      "setup",
+      "p0",
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "p7",
+      "p8",
+      "p9",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18",
+      "p19",
+      "p20",
+      "p21",
+      "p22",
+      "p23"
+    ]
+  },
+  "intro": {
+    "title": "1. Introduction to Pluto",
+    "html": "<div class=\"card\"><p><b>Introduction</b></p><p>Pluto is not just a drone, it is a development tool. It enables the user to develop numerous projects across different areas. With the Pluto Platform, you can create and innovate to bring your ideas into reality.</p><p>From simply glowing LEDs, to understanding complicated scientific concepts, to developing fun games - everything is possible with the Pluto Platform. The sensor data and the remote control data are all accessible with this platform, making it one of a kind.</p><p>With the platform being open source, tinkering is made a lot easier with the API based coding in C++. And if you have never coded in your life, we have something for you as well - <b>Pluto Blocks</b>.</p><p>Pluto Blocks is an easy drag and drop block programming application which does not require any prior knowledge of programming languages. It provides a comprehensible platform to tinker with Pluto 1.2 and Pluto X nano drones. With PlutoBlocks, we aim to motivate the users to begin their journey into the universe of drones. Some of the key features of Pluto Blocks are:</p><ul><li>Easy drag and drop blocks</li><li>Real time C++ code in separate tab helps in learning the programming language</li><li>No separate software required to build and flash the code</li><li>Wireless flashing makes everything much easier and faster</li><li>User friendly UI makes it exciting for users of all ages</li></ul></div>"
+  },
+  "compatibility": {
+    "title": "2. Compatibility",
+    "html": "<div class=\"card\"><p><b>Projects with Pluto:</b> Using <b>Pluto Blocks</b> (version 4.1) contains projects that are built on Pluto Blocks software and executed using Pluto nano drone. The compatibility for both are given below.</p><h2>Software:</h3><ul><li>Pluto Blocks 4.1.0</li></ul><h2>Drones:</h3><ul><li>Pluto X drone</li><li>Pluto 1.2 drone</li></ul></div>"
+  },
+  "platform": {
+    "title": "3. Platform Overview",
+    "html": "<div class=\"card\">\n<p>\nThe Pluto platform consists of three essential components: <b>Hardware</b>, <b>Software</b>, and <b>Design</b>. All three are crucial for smooth, safe flying, and each can be customized for your own projects—making Pluto a flexible tool for learning, building, and innovating.\n</p>\n<table style=\"width:100%;margin:18px 0 0 0;font-size:15px;background:rgba(210,153,34,0.05);border-radius:6px;\">\n  <thead>\n    <tr style=\"background:rgba(210,153,34,0.12);color:#d29922;\">\n      <th style=\"padding:8px;\">Component</th>\n      <th style=\"padding:8px;\">Role</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding:7px 8px;\">Hardware</td>\n      <td style=\"padding:7px 8px;\">All of the electronics and mechanical parts needed to make and control the drone</td>\n    </tr>\n    <tr>\n      <td style=\"padding:7px 8px;\">Software</td>\n      <td style=\"padding:7px 8px;\">All flight logic, communication, and APIs for programming</td>\n    </tr>\n    <tr>\n      <td style=\"padding:7px 8px;\">Design</td>\n      <td style=\"padding:7px 8px;\">The frame/structure, customizable for new ideas or extra components</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+  },
+  "primus": {
+    "title": "3.1 Primus – Hardware",
+    "html": "<div class=\"card\">\n    <p>\n      All Pluto drones use the <b>Primus flight controller</b> as the core hardware. Pluto X has Primus X2 v1 and Pluto 1.2 has Primus V4. Both are capable, modern \"brains\" for your drone.\n    </p>\n    <div style=\"display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:20px 0;\">\n      <figure style=\"flex:1 1 180px;max-width:240px;\">\n        <div style=\"background:#fff;border-radius:6px;padding:6px;\">\n          <img src=\"assets/img/1.png\" alt=\"Primus Top Side\" style=\"width:100%;border-radius:6px;background:#fff;\">\n        </div>\n        <figcaption style=\"font-size:13px;color:#9ca3af;text-align:center;\">Top: Primus X2 v1</figcaption>\n      </figure>\n      <figure style=\"flex:1 1 180px;max-width:240px;\">\n        <div style=\"background:#fff;border-radius:6px;padding:6px;\">\n          <img src=\"assets/img/2.png\" alt=\"Primus Bottom Side\" style=\"width:100%;border-radius:6px;background:#fff;\">\n        </div>\n        <figcaption style=\"font-size:13px;color:#9ca3af;text-align:center;\">Bottom: Primus X2 v1</figcaption>\n      </figure>\n      <figure style=\"flex:1 1 180px;max-width:240px;\">\n        <div style=\"background:#fff;border-radius:6px;padding:6px;\">\n          <img src=\"assets/img/3.png\" alt=\"Primus Unibus Header\" style=\"width:100%;border-radius:6px;background:#fff;\">\n        </div>\n        <figcaption style=\"font-size:13px;color:#9ca3af;text-align:center;\">Unibus Header (Pluto X only)</figcaption>\n      </figure>\n    </div>\n    <table style=\"width:100%;margin:14px 0;font-size:14.2px;line-height:1.65;background:rgba(225,225,225,0.01)\">\n      <thead>\n        <tr style=\"background:rgba(127,199,255,0.11);color:#7fc7ff;\">\n          <th style=\"padding:7px 8px;\">Feature</th>\n          <th style=\"padding:7px 8px;\">Details</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Microcontroller</td>\n          <td style=\"padding:6px 8px;\">STM32F303CB (32-bit ARM Cortex-M4)<br>72 MHz<br>128 KB Flash</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Sensors</td>\n          <td style=\"padding:6px 8px;\">INA219 – Voltage &amp; Current<br>ICM-20948 – 9-axis IMU<br>ICP-10111 – Barometer</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Internal Power</td>\n          <td style=\"padding:6px 8px;\">Vin: 2.8V–5.5V<br>0A–2A<br>Logic: 3.3V<br>1S battery charger (0.9A–1A)</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Motor Driver</td>\n          <td style=\"padding:6px 8px;\">4 × N-Channel MOSFET (6A)<br>2 × Bi-directional drivers (X2 only)</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">WiFi</td>\n          <td style=\"padding:6px 8px;\">Access Point / Station mode</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Onboard Ports</td>\n          <td style=\"padding:6px 8px;\">Camera<br>SPI, I<sup>2</sup>C<br>PPM<br>5 × ADC<br>3 × PWM<br>6 × GPIO<br><span style=\"color:#9ca3af;font-size:13px;\">See images for pinout and port locations.</span></td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Physical</td>\n          <td style=\"padding:6px 8px;\">48mm × 48mm<br>Mount holes: 3.6mm diameter<br>10.4g</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Programming</td>\n          <td style=\"padding:6px 8px;\">AeroFlash OTA<br>USB DFU Mode</td>\n        </tr>\n        <tr>\n          <td style=\"padding:6px 8px;font-weight:500;\">Unibus</td>\n          <td style=\"padding:6px 8px;\">20-pin header for add-ons (Pluto X only)</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+  },
+  "magis": {
+    "title": "3.2 Magis – The Software",
+    "html": "<div class=\"card\">\n    <p>\n      Hardware is just the start—<b>Magis</b> (the software) is what brings Pluto to life.<br>\n      Most users never need to program Pluto for basic flight: the preloaded Magis firmware already delivers stable, reliable control.\n    </p>\n    <img src=\"assets/4.png\" alt=\"Pluto Platform Diagram\" style=\"display:block;margin:24px auto;max-width:100%;\">\n    <p>\n      If you want to understand how Magis keeps flights stable, break it down by logical blocks. Knowing what each block does makes experimenting easier.\n    </p>\n    <p>\n      Pluto runs the <b>MagisV2-API-Library</b> firmware, with different blocks for data, estimation, control, and hardware interfaces.</p>\n    <h2 style=\"margin-top:2em;\">Core Flight Control Blocks</h2>\n    <p>These blocks are responsible for essential flying functions:</p>\n    <ol style=\"margin-bottom:1.5em;\">\n      <li style=\"margin-bottom:1em;\">\n        <b>FC-Data</b>: Reads and processes the drone's sensor data.<br>\n        <b>Sensors</b>: Accelerometer (X, Y, Z, Net_Acc), Gyroscope (X, Y, Z), Magnetometer (X, Y, Z), Barometer (Pressure, Temp).<br>\n        <b>Filters</b>: Cleans raw data (e.g., Complementary Filter).<br>\n        <b>Estimate</b>: Calculates actual state (angles, rates, position, velocity).\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>FC-Config</b>: Holds important settings (loop frequency, PID gains).\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>FC-Control</b>: Main flight logic, mode switching, and taking user commands (ARM/DISARM, status, remote/app conversion, flight modes, HeadFree heading, etc).\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>Motors</b>: Converts control signals to motor output. (Standard: M5–M8; Bi-directional: M1–M2 with special setup)\n      </li>\n    </ol>\n    <h2 style=\"margin-top:2em;\">Supporting &amp; Peripheral Blocks</h2>\n    <ol start=\"5\" style=\"margin-bottom:1.5em;\">\n      <li style=\"margin-bottom:1em;\">\n        <b>BMS</b>: Battery health, current/voltage, mAh tracking.\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>Peripherals &amp; Serial</b>: GPIO, ADC, PWM ports & protocols (I2C, SPI, UART).\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>Add-Ons</b>: Expansion hardware (OLED, distance sensors, etc).\n      </li>\n      <li style=\"margin-bottom:1em;\">\n        <b>Debugging</b>: Print and graph APIs for real-time monitoring.\n      </li>\n    </ol>\n    <p style=\"margin-top:2em;\">\n      <b>Tip:</b> Focus on one logical block at a time when learning or tinkering—it’s easier and more fun!\n    </p>\n  </div>"
+  },
+  "tinkering": {
+    "title": "4. Ease of Tinkering",
+    "html": "<div class=\"card\"><p>Magis runs continuously. Your tinkering loop executes simultaneously just before the Control loop at a default frequency of 3.5ms.</p><pre><code><span class=\"comment\">// Do not remove the include below</span>\n<span class=\"keyword\">#include</span> <span class=\"str\">\"PlutoPilot.h\"</span>\n\n<span class=\"keyword\">void</span> <span class=\"func\">plutoRxConfig</span>() {\n  Receiver_Mode(Rx_ESP); <span class=\"comment\">// Default ESP mode</span>\n}\n\n<span class=\"keyword\">void</span> <span class=\"func\">plutoInit</span>() { <span class=\"comment\">// Hardware initialization</span> }\n\n<span class=\"keyword\">void</span> <span class=\"func\">onLoopStart</span>() { <span class=\"comment\">// Runs once on Developer Mode activation</span> }\n\n<span class=\"keyword\">void</span> <span class=\"func\">plutoLoop</span>() {\n  <span class=\"comment\">// Repeated logic</span>\n  Set_LED(BLUE, TOGGLE);\n}\n\n<span class=\"keyword\">void</span> <span class=\"func\">onLoopFinish</span>() { <span class=\"comment\">// Cleanup</span> }</code></pre></div>"
+  },
+  "setup": {
+    "title": "5. Prerequisites",
+    "html": "<div class=\"card\"><h2>1. Pluto IDE (VS Code)</h3><p>Install Visual Studio Code and the Pluto IDE Extension. Open the Magis software folder and select your target board (PRIMUSX2).</p><h2>2. Developer Mode</h3><p>In the Pluto Controller app, go to settings and select <b>\"I am a developer\"</b>. A Developer Mode button (Green/Red) will appear on the main flight screen.</p></div>"
+  },
+  "p0": {
+    "title": "Project 0",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a project to turn the Red LED ON.</p><h2>Solution</h3><img src=\"assets/img/31.png\" alt=\"Project 0 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Running the project:</h3><div style=\"border-left: 3px solid var(--accent); padding-left: 15px; margin: 15px 0; background: rgba(255, 182, 39, 0.05); padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0;\"><p>⇀ Build and flash the project (Refer Building and Flashing section for steps)</p><p>⇀ Connect the Pluto Controller App with the drone and turn the Developer Mode ON to execute the project</p><p>⇀ The Red LED will turn ON</p><p>⇀ The LED will turn OFF when the Developer Mode will be turned OFF</p></div><div class=\"theory-box\"><b>REMEMBER:</b><div style=\"border-left: 2px solid #fff; padding-left: 10px; margin-top: 10px;\"><p>⇀ All the projects have to be built and flashed in the same manner</p><p>⇀ The projects will run in the Developer Mode only</p></div></div><p>After understanding Project 0, let us try more block programming with the help of the next projects. We recommend you to first try building the projects on your own by reading the challenge and later refer to the solution to review your project.</p></div>"
+  },
+  "p1": {
+    "title": "Project 1",
+    "html": "<div class=\"card\"><h2>Challenge:</h3><p>Build a program such that the drone will take off when the Developer Mode is turned ON and the drone will land when the Developer Mode is turned OFF.</p><h2>Solution:</h3><img src=\"assets/img/32.png\" alt=\"Project 0 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><div style=\"border-left: 3px solid var(--accent); padding-left: 15px; margin: 20px 0; background: rgba(255, 182, 39, 0.05); padding-top: 10px; padding-bottom: 10px; border-radius: 0 8px 8px 0;\"><p><b>Pro tip:</b></p><p>If a project involves flying the drone, make sure you have enough space around the drone while taking off.</p></div></div>"
+  },
+  "p2": {
+    "title": "Project 2",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that if the <b>Pitch input</b> from the Pluto Controller App (<b>RC Pitch</b>) is greater than <b>1500</b>, the <b>Red LED</b> should turn <b>ON</b>. If the value is less than <b>1500</b>, the Red LED should turn <b>OFF</b>.</p><h2>Solution</h3><img src=\"assets/img/33.png\" alt=\"Project 2 Solution - RC Pitch LED Control\" style=\"display:block;margin:20px auto;max-width:100%;\"><div style=\"border-left:3px solid var(--accent);padding-left:15px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p><b>Pro Tip:</b></p><p>You do <b>not</b> need to fly or arm the drone to execute this project. This project works even when the drone is on the ground. Try moving the Pitch slider in the Pluto Controller App and observe the Red LED.</p></div></div>"
+  },
+  "p3": {
+    "title": "Project 3",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that if the <b>Pitch input</b> from the Pluto Controller App (<b>RC Pitch</b>) is greater than <b>1500</b>, the <b>Red LED</b> should turn <b>ON</b>. If the value is less than <b>1500</b>, the <b>Green LED</b> should turn <b>ON</b>.</p><h2>Solution</h3><img src=\"assets/img/34.png\" alt=\"Project 3 Solution - RC Pitch Dual LED Control\" style=\"display:block;margin:20px auto;max-width:100%;\"><div style=\"border-left:3px solid var(--accent); padding-left:15px; margin:18px 0; background:rgba(255,182,39,0.06); border-radius:0 8px 8px 0;\"><p><b>Pro Tip:</b></p><p>Remember to turn the <b>first LED OFF</b> before turning the other LED ON. If an LED is not turned OFF, it will remain ON along with the second LED. Try testing this behavior to understand LED state control better.</p></div></div>"
+  },
+  "p4": {
+    "title": "Project 4",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that the <b>Blue LED</b> will <b>TOGGLE</b> after every <b>2 seconds</b>.</p><h2>Solution</h3><img src=\"assets/img/35.png\" alt=\"Project 4 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p><b>Toggle</b> means changing the current state.</p><p>If the LED is <b>ON</b>, it turns <b>OFF</b>. If it is <b>OFF</b>, it turns <b>ON</b>.</p><p>The LED will switch its state every <b>2 seconds</b>.</p><p>Try changing the timer duration and observe how the behavior changes to better understand how the <b>timer block</b> works.</p></div></div>"
+  },
+  "p5": {
+    "title": "Project 5",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program to <b>blink an LED</b> after every <b>2 seconds</b>.</p><h2>Solution</h3><img src=\"assets/img/36.png\" alt=\"Project 5 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>If the LED is not switched <b>OFF</b>, it will remain <b>ON continuously</b> and will not blink.</p><p>This program turns the LED <b>ON every 2 seconds</b> and then switches it OFF to create a blinking effect.</p><p>Try changing the time to a very small value and observe how fast the LED blinks.</p></div></div>"
+  },
+  "p6": {
+    "title": "Project 6",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that <b>all motors receive 1200 PWM</b> when <b>Developer Mode is ON</b>, and <b>all motors receive 1000 PWM</b> when <b>Developer Mode is OFF</b>.</p><h2>Solution</h3><img src=\"assets/img/37.png\" alt=\"Project 6 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>Whenever you control motors using PWM, always <b>shut them OFF</b> by setting <b>1000 PWM</b> inside <b>On Stop</b>.</p><p>This ensures motors do not keep running when Developer Mode is turned OFF or when the app gets disconnected.</p></div></div>"
+  },
+  "p7": {
+    "title": "Project 7",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that the <b>Green LED</b> and <b>Blue LED</b> turn ON and the drone <b>yaws to 150 degrees</b>. <br><b>Hint:</b> Use the <b>Desired Yaw</b> block.</p><h2>Solution</h3><img src=\"assets/img/38.png\" alt=\"Project 7 Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>The execution of <b>Desired State</b> blocks (like Desired Yaw) can be tested <b>only while flying the drone</b>.</p><p>Make sure the drone is armed and airborne before checking the yaw behavior.</p></div></div>"
+  },
+  "p8": {
+    "title": "Project 8",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that if the <b>current Roll angle</b> is between <b>-180° and 0°</b>, the <b>Red LED</b> turns ON, and if the Roll angle is between <b>0° and 180°</b>, the <b>Green LED</b> turns ON.</p><h2>Solution</h3><img src=\"assets/img/39.png\" alt=\"Project 8 Solution Method 1\" style=\"display:block;margin:20px auto;max-width:100%;\"><p style=\"text-align:center;color:#9ca3af;font-size:13px;\">OR</p><img src=\"assets/img/40.png\" alt=\"Project 8 Solution Method 2\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>A single <b>challenge can have multiple solutions</b>. Try to identify the <b>most optimum</b> solution while programming.</p><p>Different logic structures may produce the same output—explore and compare them.</p></div></div>"
+  },
+  "p9": {
+    "title": "Project 1: Color Wheel",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>As the drone yaws through <b>360°</b>, it should generate different <b>primary and secondary colors</b> using the onboard LEDs.</p><h2>The Idea</h3><p>A color wheel shows how <b>primary colors</b> combine to form <b>secondary colors</b>. In this project, you will turn your Pluto into a <b>live color wheel</b> and visually observe how LED colors blend as the yaw angle changes.</p><h2>Approach</h3><p>The Primus V4 / Primus X flight controller has <b>Red, Green, and Blue LEDs</b>. By turning ON different combinations of these LEDs at specific <b>yaw angle ranges</b>, you can generate secondary colors.</p><p>If the LEDs are conditioned based on the <b>current yaw angle</b> of the drone, Pluto behaves like a rotating color wheel.</p><img src=\"assets/img/42.png\" alt=\"Yaw Angle to Color Mapping\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Code</h3><img src=\"assets/img/43.png\" alt=\"Project 01 Code\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Insights</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ <b>Magnetometer</b> is the most important sensor for measuring the Yaw angle.</p><p>⇀ If yaw values are unstable, perform <b>Magnetometer Calibration</b> from the Pluto Controller App.</p><p>⇀ This project <b>does not require flying or arming</b> the drone.</p></div></div>"
+  },
+  "p10": {
+    "title": "Project 2: Compass Drone",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Use your Pluto drone as a <b>compass</b> to point towards the <b>North, East, South, and West</b> directions.</p><h2>The Idea</h3><p>Compasses have been used since ancient times to determine direction. A standard compass points towards <b>North</b>. With this project, you will convert your Pluto into a <b>digital compass</b> that can point to North, East, South, West—or any direction you choose.</p><h2>Approach</h3><p>When the drone is properly <b>Magnetometer calibrated</b>, a yaw angle of <b>0°</b> corresponds to the <b>North</b> direction.</p><ul><li>0° → North</li><li>90° → East</li><li>180° → South</li><li>270° → West</li></ul><p>By setting the <b>desired yaw angle</b> of the drone to these values, Pluto can be made to point in specific directions. As a visual indicator, you can use <b>different LEDs</b> for different directions.</p><img src=\"assets/img/44.png\" alt=\"Directions with Yaw Angles\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Code</h3><img src=\"assets/img/45.png\" alt=\"Compass Drone Code\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Activity</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin-top:16px;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Along with a few friends, try guessing directions inside a room with no sunlight.</p><p>⇀ Use this project to verify the actual directions.</p><p>⇀ The person with the closest guess wins!</p></div></div>"
+  },
+  "p11": {
+    "title": "Project 3: Spirit Level",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program to use Pluto as a <b>digital spirit level</b> and detect whether a surface is perfectly horizontal.</p><h2>The Idea</h3><p>Traditional spirit levels are used to check if a surface is horizontal or vertical. With Pluto, you can upgrade this age-old tool by using the drone’s sensors and LEDs to make a <b>smart, customizable spirit level</b>.</p><h2>Approach</h3><p>Pluto’s sensors provide real-time values of <b>Roll</b>, <b>Pitch</b>, and <b>Yaw</b> angles. By using the current <b>Roll angle</b> and controlling the onboard LEDs, you can indicate whether a surface is level.</p><ul><li>If the Roll angle is outside a defined range, LEDs should blink</li><li>If the surface is perfectly horizontal, a steady LED should indicate balance</li><li>Adjust the <b>loop time</b> to control LED toggle frequency</li></ul><h2>Solution</h3><img src=\"assets/img/46.png\" alt=\"Spirit Level Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Insights</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Changing the loop time affects how fast the LED blinks</p><p>⇀ Accuracy can be customized by modifying the acceptable angle"
+  },
+  "p12": {
+    "title": "Project 4: Truth or Dare",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a fun game where a <b>spinning drone</b> replaces the traditional spinning bottle to play <b>Truth or Dare</b>.</p><h2>The Idea</h3><p>In the classic Truth or Dare game, a bottle is spun to randomly select a participant. In this upgraded version, the <b>Pluto drone itself spins</b> and points toward a participant when it stops. The selected person must then choose between <b>Truth</b> or <b>Dare</b>.</p><h2>Approach</h3><p>Pluto Blocks allows you to set the <b>desired yaw angle</b> of the drone. The drone will rotate to whichever yaw angle you command.</p><ul><li>Use a <b>random yaw angle</b> to create surprise</li><li>Use a <b>timer block</b> so the drone gets enough time to reach an angle before receiving the next command</li><li>Fly the drone in <b>Headfree mode</b> for easier control</li></ul><img src=\"assets/img/47.png\" alt=\"Yaw angles for participants\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Solution</h3><img src=\"assets/img/48.png\" alt=\"Truth or Dare Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Game Rules</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Play with <b>4 participants</b></p><p>⇀ Each participant stands at <b>0°, 90°, 180°, and 270°</b> relative to the drone</p><p>⇀ When the drone stops spinning, the person it points to must choose <b>Truth</b> or <b>Dare</b></p></div><h2>Activity</h3><p>Modify the code so the game can be played by <b>6 participants</b> instead of 4. Think about how yaw angles should be divided equally!</p></div>"
+  },
+  "p13": {
+    "title": "Project 5: Chuck to Arm",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program to <b>arm the drone automatically when it is tossed in the air</b>.</p><h2>The Idea</h3><p>Normally, a drone is armed while resting on the ground. In this project, you will arm Pluto by simply <b>throwing it into the air</b>, making the arming process more intuitive and fun.</p><h2>Approach</h3><p>When the drone is tossed upward, it enters a brief <b>free-fall</b> condition. During this moment, the accelerometer’s <b>Net Acceleration</b> value drops close to zero.</p><ul><li>Detect when Net Acceleration ≈ 0</li><li>Ensure the condition is not caused by a crash</li><li>Arm the drone instantly at that moment</li></ul><p><b>Important:</b> The drone must be armed from the app before executing this project.</p><h2>Solution</h3><img src=\"assets/img/49.png\" alt=\"Chuck to Arm Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Pro Tip</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Toss the drone gently—do not throw it aggressively</p><p>⇀ Always perform this project in an open, safe area</p><p>⇀ Understanding free-fall detection is useful for advanced flight logic</p></div></div>"
+  },
+  "p14": {
+    "title": "Project 6: Open Sesame",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program such that the drone <b>takes off when air is blown on it</b>, using the onboard Barometer sensor.</p><h2>The Idea</h3><p>Instead of using the Take Off button in the Pluto Controller App, you will use the <b>Barometer sensor</b> present on the Primus V4 / Primus X board. Blowing air on the drone causes a sudden change in air pressure, which can be used as a trigger to take off.</p><h2>Approach</h3><p>The Barometer continuously measures air pressure. When air is blown over the sensor, a temporary pressure spike or dip is detected.</p><ul><li>Monitor the current pressure value</li><li>Detect a sudden change compared to the initial pressure</li><li>Trigger takeoff when the threshold is crossed</li></ul><p><b>Important:</b> Always arm the drone from the app before running this project.</p><h2>Solution</h3><img src=\"assets/img/50.png\" alt=\"Open Sesame Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Activity</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Place the drone near a door</p><p>⇀ Open or close the door quickly to generate airflow</p><p>⇀ Observe the drone take off due to the pressure change</p></div></div>"
+  },
+  "p15": {
+    "title": "Project 7: Gyroscopic Drone",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Experience the effect of the <b>Gyroscope sensor</b> by powering the motors using only gyroscope data while holding Pluto in your hand.</p><h2>The Idea</h3><p>The <b>Gyroscope</b> is one of the most important sensors used in devices ranging from smartphones to submarines and even space telescopes. In this project, you will understand how the gyroscope works by directly experiencing its effect through motor response.</p><h2>Approach</h3><p>Instead of using multiple sensors, this project relies <b>only on gyroscope data</b> to control the motors.</p><ul><li>Read gyroscope values in real time</li><li>Positive gyro values power one set of motors</li><li>Negative gyro values power the opposite set of motors</li></ul><p>This makes the motors respond instantly to rotational motion of the drone.</p><h2>Experiment</h3><img src=\"assets/img/51.png\" alt=\"Gyroscope Movement\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Solution</h3><img src=\"assets/img/52.png\" alt=\"Gyroscopic Drone Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Activity</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p>⇀ Try changing the inclination of Pluto about the <b>roll axis</b> without making the motors rotate</p><p>⇀ This must be done <b>very slowly</b>, demonstrating how gyroscopes measure rate of rotation</p></div></div>"
+  },
+  "p16": {
+    "title": "Project 8: Logic Drone",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Understand the working of basic <b>Logic Gates (AND / OR)</b> by using Pluto as a physical logic demonstration system.</p><h2>The Idea</h3><p><b>Logic Gates</b> form the foundation of all digital electronics. Pluto Blocks provides logical operators such as <b>AND</b> and <b>OR</b>, allowing you to visualize how logic works using real inputs and outputs.</p><h2>Approach</h3><p>The <b>Pluto Controller App</b> itself is used to provide inputs:</p><ul><li><b>Throttle stick</b> and <b>Pitch stick</b> act as logic inputs</li><li><b>AND logic</b>: Throttle UP <b>AND</b> Pitch UP</li><li><b>OR logic</b>: Throttle DOWN <b>OR</b> Pitch DOWN</li></ul><p>Based on the logic result, all four motors are powered and different LED combinations are activated.</p><h2>Inputs</h3><img src=\"assets/img/53.png\" alt=\"Logic Inputs from App\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Solution</h3><img src=\"assets/img/54.png\" alt=\"Logic Drone Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><p><b>Insight:</b> This project shows how abstract logic operations directly control physical systems like motors and LEDs.</p></div></div>"
+  },
+  "p17": {
+    "title": "Project 9: One Key Return",
+    "html": "<div class=\"card\"><h2>Challenge</h3><p>Build a program to <b>call the drone back to the pilot</b> using Developer Mode, without using GPS.</p><h2>The Idea</h3><p>This project demonstrates how a drone can return to its owner by <b>tracking the phone's heading</b> instead of relying on GPS technology. When the drone flies far away, Developer Mode can be used as a single command to bring it back.</p><h2>Approach</h3><p>The Pluto Controller App continuously sends the phone’s heading (Yaw). By comparing the drone’s heading with the phone’s heading, the drone can rotate and move toward the pilot.</p><ul><li>Use phone heading data sent from the app</li><li>Calculate the difference between drone heading and phone heading</li><li>Adjust yaw to face the pilot</li><li>Move forward to return</li></ul><h2>Solution</h3><img src=\"assets/img/55.png\" alt=\"One Key Return Solution\" style=\"display:block;margin:20px auto;max-width:100%;\"><h2>Important Notes</h3><div style=\"border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0;background:rgba(255,182,39,0.06);border-radius:0 8px 8px 0;\"><ul><li>Connect the drone using <b>PlutoBlocks</b></li><li>Turn ON <b>Send Heading</b> in Developer Settings</li><li>Create Integers: <b>DroneHead</b>, <b>phoneYaw</b>, <b>Read</b></li><li>Create Boolean: <b>Flag</b></li></ul></div></div>"
+  }
+}

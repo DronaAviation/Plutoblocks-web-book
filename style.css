@@ -1,0 +1,114 @@
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 24px 18px;
+    background: linear-gradient(
+      180deg,
+      #0d1117 0%,
+      #0b0f14 100%
+    );
+    border-right: 1px solid rgba(255,255,255,0.08);
+    overflow-y: auto;
+  }
+  
+  .sidebar-header {
+    margin-bottom: 28px;
+  }
+  
+  .sidebar-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  
+  .sidebar-header p {
+    font-size: 13px;
+    color: #9ca3af;
+  }
+  
+  /* Sections */
+  .sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  /* Divider */
+  .sidebar-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 18px 0;
+  }
+  
+  /* Items */
+  .nav-item {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  
+  /* Sub items */
+  .nav-item.sub {
+    padding-left: 30px;
+    font-size: 13.5px;
+    color: #9ca3af;
+  }
+  
+  /* Hover */
+  .nav-item:hover {
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+  }
+  
+ /* ===== ACTIVE SIDEBAR STATE ===== */
+
+/* Default active = Introduction (no hash) */
+body:not(:has(main section:target))
+.nav-item[href="#intro"] {
+background: #d29922;
+color: #0d1117;
+font-weight: 600;
+}
+
+/* Active when section is targeted */
+body:has(#intro:target)  .nav-item[href="#intro"],
+body:has(#compatibility:target) .nav-item[href="#compatibility"],
+body:has(#platform:target) .nav-item[href="#platform"],
+body:has(#primus:target) .nav-item[href="#primus"],
+body:has(#magis:target) .nav-item[href="#magis"],
+body:has(#tinkering:target) .nav-item[href="#tinkering"],
+body:has(#prereq:target) .nav-item[href="#prereq"],
+body:has(#p1:target) .nav-item[href="#p1"],
+body:has(#p2:target) .nav-item[href="#p2"],
+body:has(#p3:target) .nav-item[href="#p3"],
+body:has(#p4:target) .nav-item[href="#p4"],
+body:has(#p5:target) .nav-item[href="#p5"],
+body:has(#p6:target) .nav-item[href="#p6"] {
+background: #d29922;
+color: #0d1117;
+font-weight: 600;
+}
+
+/* ===== ACTIVE SIDEBAR HIGHLIGHT (CSS-ONLY) ===== */
+body:has(section#intro:target)        .sidebar a[href="#intro"],
+body:has(section#compatibility:target) .sidebar a[href="#compatibility"],
+body:has(section#platform:target)      .sidebar a[href="#platform"],
+body:has(section#primus:target)        .sidebar a[href="#primus"],
+body:has(section#magis:target)         .sidebar a[href="#magis"],
+body:has(section#tinkering:target)     .sidebar a[href="#tinkering"],
+body:has(section#prereq:target)        .sidebar a[href="#prereq"],
+body:has(section#p1:target)            .sidebar a[href="#p1"],
+body:has(section#p2:target)            .sidebar a[href="#p2"] {
+  background: var(--accent);
+  color: #0d1117;
+  font-weight: 600;
+}

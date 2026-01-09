@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "order": [
+      "intro",
+      "compatibility",
+      "platform",
+      "primus",
+      "magis",
+      "tinkering",
+      "setup",
+      "p1",
+      "p2",
+      "p3"
+    ]
+  },
+
+  "intro": {
+    "title": "1. Introduction to Pluto",
+    "html": "<div class=\"card\"><p><b>Pluto</b> aims at providing an ultimate user experience in terms of flight experience as well as tinkering. These two experiences are must for innovation. We believe that tinkerers have great ideas. Some of which can even change the world. We at Drona Aviation strive to help such ideas become reality. Our product Pluto X / Pluto 1.2 is a great prototyping tool for implementing your ideas.</p><p>Tinkering is an interesting hobby and the development tool plays a very important role in making it an engrossing experience. A basic development tool will provide a platform where the tinkerer has to begin from scratch every time and gradually start implementing their ideas, which surely is time consuming. However, if a development tool provides an effortless platform for the tinkerers to directly develop their ideas on, without the need of worrying about the rest of the system, it will definitely be more productive.</p><p>With this perspective, we do not want our tinkerers to waste their energy in figuring out how to get the drone to fly but to focus only on what they want to do and achieve with the drone. For this purpose, we have done all the work required for the Pluto drone to fly and hence, tinkerers do not need to worry about that. Even without any tinkering, a user can easily fly Pluto X. The entire system has been designed in such an elegant way that the tinkerers can directly start implementing their ideas by coding into the platform provided to them.</p></div>"
+  },
+
+  "compatibility": {
+    "title": "2. Compatibility",
+    "html": "<div class=\"card\"><p>Projects with Pluto using Pluto IDE (Version 1.0) are compatible with the infrastructures given below.</p><h3>Software</h3><ul><li>Pluto IDE</li></ul><h3>Drones</h3><ul><li>Pluto X nano drone</li><li>Pluto 1.2 nano drone</li></ul></div>"
+  },
+
+  "platform": {
+    "title": "3. The Platform",
+    "html": "<div class=\"card\"><p>The Pluto platform consists of three essential components: <b>Hardware</b>, <b>Software</b>, and <b>Design</b>. All three parts are essential for a seamless flight experience. The platform allows you to modify or extend each component independently to suit your application needs.</p></div>"
+  },
+
+  "primus": {
+    "title": "3.1 Primus – The Hardware",
+    "html": "<div class=\"card\"><p>The flight controller of Pluto X and Pluto 1.2 is called <b>Primus</b>. It is designed to provide stable flight performance along with extensibility for tinkering.</p><ul><li><b>Microcontroller:</b> 32-bit ARM Cortex-M4 processor with 256 KB / 128 KB Flash</li><li><b>Wireless Module:</b> ESP12F for hotspot creation and app communication</li><li><b>IMU:</b> 9-axis sensor including Gyroscope, Accelerometer, and Magnetometer</li><li><b>Motor Drivers:</b> 8 (X2) / 4 (V4) motor drivers, reversible on X2</li><li><b>Unibus:</b> 20-pin expansion bus for sensors and peripherals</li></ul></div>"
+  },
+
+  "magis": {
+    "title": "3.2 Magis – The Software",
+    "html": "<div class=\"card\"><p>Pluto drones run on the <b>MagisV2 API Library</b>. The firmware is modular and divided into logical blocks.</p><h3>Core Flight Control Blocks</h3><ul><li><b>FC-Data:</b> Sensor acquisition, filtering, and state estimation</li><li><b>FC-Config:</b> Configuration parameters such as PID and loop frequency</li><li><b>FC-Control:</b> Flight modes, arming logic, and safety</li><li><b>Motors:</b> Converts control outputs to motor commands</li></ul><h3>Supporting Blocks</h3><ul><li><b>BMS:</b> Battery monitoring and safety</li><li><b>Peripherals:</b> GPIO, ADC, PWM access</li><li><b>Debugging:</b> Print and graph APIs</li></ul></div>"
+  },
+
+  "tinkering": {
+    "title": "4. Ease of Tinkering",
+    "html": "<div class=\"card\"><p>Magis runs continuously. Your tinkering loop executes alongside the control loop at a default period of 3.5 ms.</p><pre><code>#include \"PlutoPilot.h\"\n\nvoid plutoRxConfig() {\n  Receiver_Mode(Rx_ESP);\n}\n\nvoid plutoInit() {}\n\nvoid onLoopStart() {}\n\nvoid plutoLoop() {\n  Set_LED(BLUE, TOGGLE);\n}\n\nvoid onLoopFinish() {}</code></pre></div>"
+  },
+
+  "setup": {
+    "title": "5. Prerequisites",
+    "html": "<div class=\"card\"><h3>1. Pluto IDE (VS Code)</h3><p>Install Visual Studio Code and the Pluto IDE extension. Open the Magis firmware folder and select the target board.</p><h3>2. Developer Mode</h3><p>In the Pluto Controller app, enable <b>\"I am a developer\"</b> from settings. A Developer Mode button will appear on the flight screen.</p></div>"
+  },
+
+  "p1": {
+    "title": "Project 1: Debug APIs",
+    "html": "<div class=\"card\"><h3>Objective</h3><p>Detect vertical movement using LEDs and monitor values using debug prints.</p><pre><code>#include \"PlutoPilot.h\"\n\nvoid plutoLoop() {\n  if (Estimate_Get(Velocity, Z) > 0) {\n    Set_LED(RED, ON);\n    Set_LED(GREEN, OFF);\n  } else {\n    Set_LED(RED, OFF);\n    Set_LED(GREEN, ON);\n  }\n  Monitor_Println(\"VelocityZ:\", Estimate_Get(Velocity, Z));\n}</code></pre></div>"
+  },
+
+  "p2": {
+    "title": "Project 2: Chuck to Arm",
+    "html": "<div class=\"card\"><h3>Objective</h3><p>Automatically arm the drone when it is tossed upward by detecting free-fall.</p><pre><code>#include \"PlutoPilot.h\"\n\nvoid plutoLoop() {\n  if (Sensor_Get(Accelerometer, Net_Acc) < 2 && !FlightStatus_Check(FS_CRASHED)) {\n    Command_Arm();\n    Set_LED(RED, ON);\n    Set_LED(GREEN, ON);\n  }\n}</code></pre></div>"
+  },
+
+  "p3": {
+    "title": "Project 3: Fly Acro",
+    "html": "<div class=\"card\"><h3>Objective</h3><p>Enable Acro (Rate) mode where stick inputs control rotational velocity.</p><pre><code>#include \"PlutoPilot.h\"\n\nvoid plutoLoop() {\n  FlightMode_Set(RATE);\n  Set_LED(RED, ON);\n  Set_LED(BLUE, ON);\n}</code></pre></div>"
+  }
+}
