@@ -14,7 +14,7 @@
       --border: #30363d;
       --text-main: #e6edf3;
       --text-muted: #8b949e;
-      --accent: #ffb627;
+      --accent: #3b82f6;
       --code-bg: #0b1220;
       --sidebar-width: 280px;
     }
@@ -123,6 +123,22 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
+    }
+
+    /* --- NEW: Back Button Style --- */
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 20px;
+      /* Space between back button and logo */
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover {
+      color: var(--accent);
     }
 
     .sidebar-brand h1 {
@@ -271,8 +287,9 @@
 
   <div class="container">
 
-    <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
+      <a href="../code/home.html" class="nav-back">← Back to Home</a>
+
       <div class="sidebar-brand">
         <h1>Pluto Project Book</h1>
         <p>Using PlutoBlocks</p>
@@ -295,18 +312,17 @@
 
       <div class="sidebar-footer">
         <div class="board-selector">
-          <label><h3>Select Flightcontroller</h3></label>
+          <label>
+            <h3>Select Flightcontroller</h3>
+          </label>
           <select id="board-select">
             <option value="primus-x2">Primus X2 / V5</option>
             <option value="primus-v4">Primus X / V4</option>
-            
-            
           </select>
         </div>
       </div>
     </aside>
 
-    <!-- ===== MAIN ===== -->
     <main class="main">
       <div class="content" id="main-content"></div>
     </main>
@@ -432,12 +448,12 @@
       });
     }
     window.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('img-modal');
+      const modal = document.getElementById('img-modal');
 
-  modal.onclick = () => {
-    modal.style.display = 'none';
-  };
-});
+      modal.onclick = () => {
+        modal.style.display = 'none';
+      };
+    });
 
 
     document.addEventListener('keydown', e => {
