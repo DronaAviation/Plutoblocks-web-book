@@ -380,6 +380,22 @@
   </div>
 
   <script>
+    /**
+     * AUTO-UPDATE LOGIC
+     * This checks for newer tags on the Project Book repo every time the window opens.
+     */
+    const { syncDocumentation } = require('../docUpdater.js');
+    
+
+    async function runUpdateCheck() {
+      console.log("[Update Check] Searching for newer documentation tags...");
+      try {
+        // Runs silently in the background
+        await syncDocumentation();
+      } catch (err) {
+        console.warn("[Update Check] Could not reach GitHub. Using current local files.");
+      }
+    }
     let boardData = {};
     let activeOrder = [];
 
