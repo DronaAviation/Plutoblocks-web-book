@@ -1,32 +1,32 @@
-name: Create Documentation Release
+name: Release Documentation Update
 
 on:
   push:
     tags:
-      - 'v*' # Triggers on any tag starting with v (e.g., v1.0, v2.1.3)
+      - 'v*' # Triggers on tags like v1.0.1
 
 permissions:
-  contents: write # Required to create a release and upload assets
+  contents: write
 
 jobs:
-  build-release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Package Documentation
+      - name: Create Version and Zip
         run: |
-          # Zip the current folder contents (excluding git files)
+          # 1. Create a version file using the tag name
+          echo "{\"tag\": \"${{ github.ref_name }}\", \"updated\": \"$(date)\"}" > version.json
+          
+          # 2. Zip the contents (excluding git files)
           zip -r docs.zip . -x "*.git*" ".github*"
 
-      - name: Create GitHub Release
+      - name: Create Doc Release
         uses: softprops/action-gh-release@v2
         with:
           files: docs.zip
-          # The release name will be the tag name (e.g., v1.0.1)
-          name: Documentation Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
+          name: Documentation Update ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
