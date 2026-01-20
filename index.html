@@ -349,7 +349,7 @@
 
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <h1>Pluto Project Book (Test V2)</h1>
+        <h1>Pluto Project Book</h1>
         <p>Using PlutoBlocks</p>
         <div id="doc-version" class="version-tag">Loading...</div>
       </div>
@@ -411,16 +411,18 @@
   const { syncDocumentation, localDocDir } = require(updaterPath);
 
   // --- VERSION DISPLAY ---
-  function displayCurrentVersion() {
+function displayCurrentVersion() {
     const versionPath = path.join(localDocDir, 'version.json');
     const versionEl = document.getElementById('doc-version');
     try {
       if (fs.existsSync(versionPath)) {
         const data = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
         versionEl.textContent = `DOCS: ${data.tag}`;
+      } else {
+        versionEl.textContent = "DOCS: v1.0.0-bundled";
       }
     } catch (e) {
-      versionEl.textContent = "DOCS: v1.0.6-beta"; // Fallback
+      versionEl.textContent = "DOCS: v1.0.5-beta"; 
     }
   }
     // --- 2. BACKGROUND UPDATE LOGIC ---
