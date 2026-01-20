@@ -17,11 +17,13 @@ jobs:
 
       - name: Create Version and Zip
         run: |
-          # 1. Create a version file using the tag name
+          # 1. Create the version file
           echo "{\"tag\": \"${{ github.ref_name }}\", \"updated\": \"$(date)\"}" > version.json
           
-          # 2. Zip the contents (excluding git files)
-          zip -r docs.zip . -x "*.git*" ".github*"
+          # 2. Zip the contents
+          # We explicitly exclude standard node_modules/ but because you 
+          # copied @electron into the root, it will be included.
+          zip -r docs.zip . -x "*.git*" ".github*" "node_modules/*"
 
       - name: Create Doc Release
         uses: softprops/action-gh-release@v2
