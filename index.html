@@ -349,7 +349,7 @@
 
     <aside class="sidebar">
       <div class="sidebar-brand">
-        <h1>Pluto Project Book (Test V2)</h1>
+        <h1>Pluto Project Book (Test V1)</h1>
         <p>Using PlutoBlocks</p>
         <div id="doc-version" class="version-tag">Loading...</div>
       </div>
@@ -393,40 +393,41 @@
   </div>
 
   <script>
-    /**
-     * AUTO-UPDATE LOGIC
-     * This checks for newer tags on the Project Book repo every time the window opens.
-     */
-// --- 1. BOOTSTRAP MODULES ---
-    const { BrowserWindow: RemoteBrowserWindow } = require('@electron/remote');
-    const path = require('path');
-    const fs = require('fs');
-    const { syncDocumentation, localDocDir } = require('../docUpdater.js');
+// 1. LOCAL MODULE LOADING
+  // Point to the local copy of the remote module sitting in AppData
+  const remoteRendererPath = './@electron/remote/dist/src/renderer/remote.js';
+  const { BrowserWindow: RemoteBrowserWindow, app: remoteApp } = require(remoteRendererPath);
 
- // --- 2. VERSION DISPLAY LOGIC ---
+  const path = require('path');
+  const fs = require('fs');
+
+  // 2. MAIN APP PATH
+  // We still need the appRoot to find your 'docUpdater.js' in the main project folder
+  const appPathArg = window.process.argv.find(arg => arg.startsWith('--appPath='));
+  const appRoot = appPathArg ? appPathArg.split('=')[1] : '';
+
+  // Use absolute path for the updater since it stays in the main installation
+  const updaterPath = path.join(appRoot, 'src', 'docUpdater.js');
+  const { syncDocumentation, localDocDir } = require(updaterPath);
+
+  // --- VERSION DISPLAY ---
   function displayCurrentVersion() {
-    // Points to AppData/Roaming/plutoblocks/project_book_cache/version.json
     const versionPath = path.join(localDocDir, 'version.json');
     const versionEl = document.getElementById('doc-version');
-    
     try {
       if (fs.existsSync(versionPath)) {
         const data = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
         versionEl.textContent = `DOCS: ${data.tag}`;
-      } else {
-        // Fallback for first-time run before sync completes
-        versionEl.textContent = "DOCS: v1.0.0-bundled";
       }
     } catch (e) {
-      console.warn("Failed to read local version file:", e);
-      versionEl.textContent = "DOCS: v1.0.0-beta"; // Manual override for your current state
+      versionEl.textContent = "DOCS: v1.0.6-beta"; // Fallback
     }
   }
     // --- 2. BACKGROUND UPDATE LOGIC ---
     (async () => {
       console.log("[Web-Book] Checking for project updates in background...");
       // Show version immediately based on current files
-    displayCurrentVersion();
+      displayCurrentVersion();
       try {
         const updated = await syncDocumentation();
         if (updated) {
@@ -564,7 +565,7 @@
       }
     });
 
-    
+
 
 
   </script>
