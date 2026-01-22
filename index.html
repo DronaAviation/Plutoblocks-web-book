@@ -393,50 +393,58 @@
   </div>
 
   <script>
-// 1. LOCAL MODULE LOADING
-  // Point to the local copy of the remote module sitting in AppData
-  const remoteRendererPath = './@electron/remote/dist/src/renderer/remote.js';
-  const { BrowserWindow: RemoteBrowserWindow, app: remoteApp } = require(remoteRendererPath);
+    // --- 1. LOCAL MODULE LOADING ---
+    // We use a relative path because @electron is now bundled inside the AppData folder
+    const remoteRendererPath = './@electron/remote/dist/src/renderer/remote.js';
+    const { BrowserWindow: RemoteBrowserWindow, app: remoteApp } = require(remoteRendererPath);
 
-  const path = require('path');
-  const fs = require('fs');
+    const path = require('path');
+    const fs = require('fs');
 
-  // 2. MAIN APP PATH
-  // We still need the appRoot to find your 'docUpdater.js' in the main project folder
-  const appPathArg = window.process.argv.find(arg => arg.startsWith('--appPath='));
-  const appRoot = appPathArg ? appPathArg.split('=')[1] : '';
+    // --- 2. PATH RESOLUTION ---
+    // Recover the main app folder path passed from the Main Process
+    const appPathArg = window.process.argv.find(arg => arg.startsWith('--appPath='));
+    const appRoot = appPathArg ? appPathArg.split('=')[1] : '';
 
-  // Use absolute path for the updater since it stays in the main installation
-  const updaterPath = path.join(appRoot, 'src', 'docUpdater.js');
-  const { syncDocumentation, localDocDir } = require(updaterPath);
+    // Point to the unified updater in your main installation's src folder
+    const updaterPath = path.join(appRoot, 'src', 'docUpdater.js');
+    const { syncProjectBook, projectCacheDir } = require(updaterPath);
 
-  // --- VERSION DISPLAY ---
-function displayCurrentVersion() {
-    const versionPath = path.join(localDocDir, 'version.json');
-    const versionEl = document.getElementById('doc-version');
-    try {
-      if (fs.existsSync(versionPath)) {
-        const data = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
-        versionEl.textContent = `DOCS: ${data.tag}`;
-      } else {
-        versionEl.textContent = "DOCS: v1.0.0-bundled";
+    // --- 3. VERSION DISPLAY ---
+    function displayCurrentVersion() {
+      // Ensure projectCacheDir was imported correctly from docUpdater.js
+      if (!projectCacheDir) {
+        console.error("[Project-Book] projectCacheDir is undefined. Check docUpdater.js exports.");
+        return;
       }
-    } catch (e) {
-      versionEl.textContent = "DOCS: v1.0.5-beta"; 
-    }
-  }
-    // --- 2. BACKGROUND UPDATE LOGIC ---
-    (async () => {
-      console.log("[Web-Book] Checking for project updates in background...");
-      // Show version immediately based on current files
-      displayCurrentVersion();
+
+      const versionPath = path.join(projectCacheDir, 'version.json');
+      const versionEl = document.getElementById('doc-version');
+
       try {
-        const updated = await syncDocumentation();
-        if (updated) {
-          console.log("[Web-Book] Update downloaded to AppData. It will load next time you open the book.");
+        if (fs.existsSync(versionPath)) {
+          const data = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+          versionEl.textContent = `DOCS: ${data.tag}`;
+        } else {
+          versionEl.textContent = "DOCS: v1.0.0-bundled";
         }
       } catch (e) {
-        console.warn("[Web-Book] Background update check failed.");
+        versionEl.textContent = "DOCS: Update Pending";
+      }
+    }
+
+    // --- 4. BACKGROUND SYNC LOGIC ---
+    (async () => {
+      console.log("[Project-Book] Checking for updates...");
+      displayCurrentVersion();
+      try {
+        // Call the project-specific sync function
+        const updated = await syncProjectBook();
+        if (updated) {
+          console.log("[Project-Book] New version downloaded. Changes will apply on next restart.");
+        }
+      } catch (e) {
+        console.warn("[Project-Book] Background update check failed.");
       }
     })();
     let boardData = {};
