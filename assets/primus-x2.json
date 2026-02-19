@@ -79,7 +79,7 @@
   },
   "compatibility": {
     "title": "2. Compatibility",
-    "html": "<div class=\"card\"><p><b>Projects with Pluto:</b> Using <b>Pluto Blocks</b> (version 4.1) contains projects that are built on Pluto Blocks software and executed using Pluto nano drone. The compatibility for both are given below.</p><h2>Software:</h3><ul><li>Pluto Blocks 4.1.0</li></ul><h2>Drones:</h3><ul><li>Pluto X drone</li><li>Pluto 1.2 drone</li></ul></div>"
+    "html": "<div class=\"card\"><p><b>Projects with Pluto:</b> Using <b>Pluto Blocks</b> (version 4.1) contains projects that are built on Pluto Blocks software and executed using Pluto nano drone. The compatibility for both are given below.</p><h2>Software:</h3><ul><li>Pluto Blocks 4.1.1</li></ul><h2>Drones:</h3><ul><li>Pluto X drone</li><li>Pluto 1.2 drone</li></ul></div>"
   },
   "platform": {
     "title": "3. Platform Overview",
